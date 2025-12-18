@@ -30,16 +30,17 @@ def twoSum2(nums, target):
         if result.get(target - j):
             print(f'from list = {i}, from dict = {result.get(target - j)}')
             print(f'from list value = {nums[i]}, from dict = {nums[result.get(target - j)]}')
-        result[target - j] = i
+        result[j] = i
 
 
 def twoSum3(nums , target):
     hash_map = {}
     for i, num in enumerate(nums):
         print(hash_map)
-        if (target-num) in hash_map:
+        if hash_map.get(target - num):
             return hash_map[target-num],i
         hash_map[num] = i
+    print(hash_map)
 
 if __name__ == '__main__':
     nums = [1, 3, 2, 4, 6, 7, 11, 15, 4, 6]
